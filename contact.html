@@ -121,6 +121,14 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        
+        /* Responsive pour que les champs redeviennent en colonne sur mobile */
+        @media (max-width: 600px) {
+            .form-row, .contact-cards {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
     </style>
 </head>
 <body>

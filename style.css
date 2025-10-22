@@ -28,7 +28,7 @@ body {
     background-color: var(--bg-dark);
     color: var(--text-light);
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Empêche le défilement horizontal non désiré */
 }
 
 a {
@@ -67,21 +67,58 @@ header {
 nav ul {
     list-style: none;
     display: flex;
+    align-items: center; 
 }
 
 nav ul li {
-    margin-left: 30px;
+    margin-left: 15px; 
 }
 
+/* Style normal pour les liens de navigation */
 nav ul li a {
-    font-size: 0.95rem;
-    position: relative;
-    padding-bottom: 5px;
-    font-weight: 600;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 8px 15px; 
+    border-radius: 8px; 
+    text-transform: uppercase;
     letter-spacing: 0.5px;
+    
+    background: linear-gradient(90deg, var(--primary-pink), var(--secondary-blue));
+    color: var(--text-light);
+    
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: 1px solid transparent;
+
+    transition: all 0.3s ease-out;
+    position: relative; 
 }
 
-/* --- BOUTONS (Animation iOS 26) --- */
+nav ul li a:hover {
+    color: var(--text-light);
+    -webkit-text-fill-color: var(--text-light);
+    border: 1px solid rgba(255, 255, 255, 0.5); 
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+    transform: translateY(0); 
+}
+
+/* Style du bouton NOS PACKS (plein gradient) */
+.btn-header-packs {
+    background: linear-gradient(90deg, var(--primary-pink), var(--secondary-blue)) !important;
+    color: var(--text-light) !important;
+    -webkit-text-fill-color: var(--text-light) !important;
+    border: none !important;
+    box-shadow: 0 0 10px rgba(255, 0, 119, 0.4);
+}
+
+.btn-header-packs:hover {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.8) !important;
+    transform: translateY(-1px);
+}
+/* --- FIN DU STYLE DE NAVIGATION --- */
+
+
+/* --- BOUTONS PRINCIPAUX (Animation iOS 26) --- */
 .btn-primary {
     background: linear-gradient(45deg, var(--primary-pink), var(--secondary-blue));
     color: var(--text-light);
@@ -112,11 +149,11 @@ nav ul li a {
 
 /* --- SECTIONS GÉNÉRALES (Apple Scroll) --- */
 .section {
-    min-height: 100vh; /* Plein écran ou presque */
+    min-height: 100vh; 
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 100px 8%;
+    padding: 100px 5%; 
     position: relative;
     overflow: hidden;
 }
@@ -132,7 +169,7 @@ nav ul li a {
     font-weight: 900;
 }
 
-/* --- SCROLL ANIMATION CLASSES (JS triggered) --- */
+/* SCROLL ANIMATION CLASSES (inchangées) */
 .scroll-reveal {
     opacity: 0;
     transform: translateY(50px);
@@ -153,4 +190,147 @@ nav ul li a {
 .scale-in.visible {
     opacity: 1;
     transform: scale(1);
+}
+
+/* ========================================================= */
+/* --- RÈGLES RESPONSIVES (Media Queries) --- */
+/* ========================================================= */
+
+@media (max-width: 1100px) {
+    .hero h1 {
+        font-size: 4.5rem;
+    }
+    
+    .manifeste-table td {
+        padding: 15px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 850px) {
+    /* Les cartes du duo (agence) passent en colonne */
+    .duo-split {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    /* Le tableau des convictions passe en mode compact (suppression de la colonne Objectif) */
+    .manifeste-table td:nth-child(3) {
+        display: none; 
+    }
+    
+    .manifeste-table td:nth-child(1) {
+        width: 35%; 
+    }
+
+    .manifeste-table td:nth-child(2) {
+        width: 65%;
+    }
+    
+    /* Le tableau des services détaillés (agence) passe en mode mobile pour éviter le débordement */
+    .service-table {
+        display: block;
+        width: 100%;
+        overflow-x: auto; /* Permet le défilement horizontal si le contenu est trop grand */
+        white-space: nowrap; /* Empêche le retour à la ligne forcé */
+    }
+}
+
+@media (max-width: 650px) {
+    
+    /* 1. TYPOGRAPHIE ET PADDING GÉNÉRAL */
+    .section {
+        padding: 60px 5%; /* Padding réduit sur les bords */
+        min-height: auto; 
+    }
+    
+    .section-title, .hero h1 {
+        font-size: 2rem; /* Réduction radicale des titres */
+        line-height: 1.2;
+    }
+    
+    .hero p {
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+    }
+    
+    /* 2. HEADER/NAVIGATION */
+    header {
+        padding: 15px 5%;
+    }
+    
+    nav ul {
+        display: none; 
+    }
+    
+    /* 3. BOUTONS et IMAGES (INDEX.HTML) */
+    .hero-center-box {
+        width: 100%;
+    }
+    
+    .btn-primary-huge, .hero-image-aligned {
+        width: 100%; /* Pleine largeur */
+        max-width: 100%;
+    }
+    
+    .btn-primary-huge {
+        padding: 15px 20px;
+        font-size: 1rem;
+    }
+
+    /* 4. FORMULAIRE DE CONTACT */
+    .contact-cards, .form-row {
+        flex-direction: column; /* Les éléments passent de côte à côte à un par un */
+        gap: 15px;
+    }
+    
+    /* 5. TABLEAU MANIFESTE (Passe en 1 colonne) */
+    .manifeste-table {
+        display: block;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .manifeste-table tr {
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .manifeste-table td {
+        display: block;
+        width: 100% !important; /* Force la pleine largeur */
+        padding: 10px 15px;
+        text-align: left;
+    }
+
+    .manifeste-table td:nth-child(1) {
+        font-size: 1.1rem;
+    }
+    
+    .manifeste-table td:nth-child(2) {
+        font-size: 0.9rem;
+        padding-top: 0;
+    }
+
+    /* CARDS PACKS (Projets) */
+    .offers-grid {
+        grid-template-columns: 1fr; /* 1 colonne pour les packs */
+    }
+    
+    .offer-card {
+        padding: 25px;
+    }
+    
+    .offer-card h3 {
+        font-size: 1.6rem;
+    }
+    
+    .offer-card .price {
+        font-size: 2.2rem;
+    }
+
+    /* Images de projets (Projets) */
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
 }
