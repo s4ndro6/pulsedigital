@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets & Offres | Pulse Digital</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles spécifiques à la page Projets */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 50px auto;
+        }
+        
+        .project-card {
+            border-radius: 15px;
+            overflow: hidden;
+            background-color: rgba(255, 0, 119, 0.05);
+            border: 1px solid rgba(255, 0, 119, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.4);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 25px;
+        }
+
+        .project-info h3 {
+            color: var(--secondary-blue);
+            margin-bottom: 5px;
+        }
+
+        .project-info p {
+            color: var(--text-fade);
+        }
+
+        /* OFFRES */
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .offer-card {
+            padding: 30px;
+            border-radius: 15px;
+            background-color: var(--secondary-blue);
+            color: var(--bg-dark);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+
+        .offer-card h3 {
+            color: var(--bg-dark);
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .offer-card .price {
+            font-size: 2.8rem;
+            font-weight: 900;
+            margin: 15px 0 25px;
+            color: var(--primary-pink);
+            background-color: var(--bg-dark);
+            padding: 5px 10px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        .offer-card ul {
+            list-style: none;
+            text-align: left;
+            margin: 0 0 30px;
+            padding: 0;
+            color: var(--bg-dark);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">PULSE DIGITAL</a>
+        <nav>
+            <ul>
+                <li><a href="agence.html">Agence</a></li>
+                <li><a href="projets.html">Projets</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section" style="min-height: auto;">
+            <h1 class="section-title scroll-reveal">Nos Projets : Raconter Votre Histoire</h1>
+            <p class="scroll-reveal" data-delay="0.2" style="text-align: center; max-width: 900px; margin: 0 auto 50px; font-size: 1.2rem; color: var(--text-fade);">De la stratégie visuelle au contenu final, chaque projet est une démonstration de notre polyvalence et de notre engagement pour l'impact.</p>
+            
+            <div class="project-grid">
+                <div class="project-card scroll-reveal" data-delay="0.3">
+                    <img src="images/affiche.jpg" alt="Affiche de film Dernière Soirée">
+                    <div class="project-info">
+                        <h3>DERNIÈRE SOIRÉE - Production Vidéo</h3>
+                        <p>Captation et post-production complète pour un court-métrage. Mise en lumière de l'émotion et du storytelling, démontrant notre expertise en audiovisuel professionnel.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card scroll-reveal" data-delay="0.5">
+                    <img src="images/charte.jpg" alt="Charte graphique Lucira">
+                    <div class="project-info">
+                        <h3>LUCIRA - Branding Complet</h3>
+                        <p>Création d'une identité visuelle (Logo, Typo, Palette) pour Lucira. Objectif : cohérence et modernité sur tous les supports, du web à l'affichage urbain.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card scroll-reveal" data-delay="0.7">
+                    <img src="images/parfum.jpg" alt="Photo de produit parfum Vylor">
+                    <div class="project-info">
+                        <h3>VYLOR - Campagne Produit Créative</h3>
+                        <p>Shooting produit en studio avec DA créative "Electric Pulse" pour les réseaux. Utilisation de la lumière et du contraste pour maximiser l'attractivité du flacon.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card scroll-reveal" data-delay="0.9">
+                    <img src="images/charte.jpg" alt="Interface de code VS Code" style="object-position: top; filter: grayscale(80%);"> 
+                    <div class="project-info">
+                        <h3>PULSE.DEV - Intégration & JS</h3>
+                        <p>Développement de la partie front-end avec animations JavaScript (Intersection Observer) et optimisation de la performance pour un rendu fluide et dynamique.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="min-height: 100vh; background-color: rgba(0, 212, 255, 0.05);">
+            <h2 class="section-title scroll-reveal" style="color: var(--text-light); -webkit-text-fill-color: var(--text-light);">Des Packs pour vous Propulser</h2>
+            <p class="scroll-reveal" data-delay="0.2" style="text-align: center; margin-bottom: 40px; color: var(--text-fade);">Des solutions tarifaires transparentes, conçues pour être accessibles et puissantes, livrées rapidement.</p>
+
+            <div class="offers-grid">
+                <div class="offer-card scroll-reveal" data-delay="0.4">
+                    <h3>Pack Découverte</h3>
+                    <p>Pour tester le Pulse et lancer une première campagne.</p>
+                    <div class="price">129 €</div>
+                    <ul>
+                        <li><i style="color: var(--primary-pink);">✓</i> 1h shooting (photo ou vidéo)</li>
+                        <li><i style="color: var(--primary-pink);">✓</i> 10 Photos retouchées HD</li>
+                        <li><i style="color: var(--primary-pink);">✓</i> 2 Reels/Shorts Vidéo</li>
+                        <li><i style="color: var(--primary-pink);">✓</i> Mini-plan éditorial (2 semaines)</li>
+                    </ul>
+                    <a href="contact.html" class="btn-primary" style="background-color: var(--bg-dark); color: var(--text-light); border: 2px solid var(--primary-pink);">Je découvre</a>
+                </div>
+
+                <div class="offer-card scroll-reveal" data-delay="0.6" style="background-color: var(--primary-pink);">
+                    <h3 style="color: var(--bg-dark);">Pack Visibilité</h3>
+                    <p style="color: var(--bg-dark);">Le lancement complet pour une image de marque forte.</p>
+                    <div class="price" style="color: var(--secondary-blue); background-color: var(--bg-dark);">250 - 350 €</div>
+                    <ul style="color: var(--bg-dark);">
+                        <li><i style="color: var(--secondary-blue);">✓</i> Rebranding ou Identité Visuelle complète</li>
+                        <li><i style="color: var(--secondary-blue);">✓</i> Shooting Journée (Lifestyle/Studio)</li>
+                        <li><i style="color: var(--secondary-blue);">✓</i> Plan stratégique détaillé (1 mois)</li>
+                        <li><i style="color: var(--secondary-blue);">✓</i> Audit de présence digitale complet</li>
+                    </ul>
+                    <a href="contact.html" class="btn-primary" style="background-color: var(--bg-dark); color: var(--text-light); border: 2px solid var(--secondary-blue);">Je me lance</a>
+                </div>
+
+                <div class="offer-card scroll-reveal" data-delay="0.8">
+                    <h3>Pack Créateur</h3>
+                    <p>Pour les entrepreneurs qui veulent une base pro complète.</p>
+                    <div class="price">400 - 600 €</div>
+                    <ul>
+                        <li><i style="color: var(--primary-pink);">✓</i> Mini Site Vitrine Professionnel</li>
+                        <li><i style="color: var(--primary-pink);">✓</i> Identité + Templates Instagram</li>
+                        <li><i style="color: var(--primary-pink);">✓</i> Production de contenu social (30 jours)</li>
+                        <li><i style="color: var(--primary-pink);">✓</i> Accompagnement stratégie longue durée</li>
+                    </ul>
+                    <a href="contact.html" class="btn-primary" style="background-color: var(--bg-dark); color: var(--text-light); border: 2px solid var(--primary-pink);">Je crée mon image</a>
+                </div>
+            </div>
+            <p class="scroll-reveal" data-delay="1.0" style="text-align: center; margin-top: 50px; color: var(--text-fade);">Tous les projets complexes (Campagnes, Sites E-commerce) sont réalisés **sur devis** pour garantir une approche sur-mesure.</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

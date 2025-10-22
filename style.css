@@ -1,0 +1,156 @@
+/* style.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap');
+
+:root {
+    --bg-dark: #050505;
+    --primary-pink: #FF0077;
+    --secondary-blue: #00D4FF;
+    --text-light: #FFFFFF;
+    --text-fade: rgba(255, 255, 255, 0.6);
+    --font-main: 'Inter', sans-serif;
+    --transition-speed: 0.8s;
+}
+
+/* Réinitialisation et Smooth Scroll */
+html {
+    scroll-behavior: smooth; /* Défilement fluide entre les ancres */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: var(--primary-pink);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+h1, h2, h3 {
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+/* --- HEADER / NAVIGATION (Effet Glassmorphism) --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    position: fixed; /* Reste en haut */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(15px); /* Effet verre flouté */
+    background-color: rgba(5, 5, 5, 0.7);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--text-light);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    font-size: 0.95rem;
+    position: relative;
+    padding-bottom: 5px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* --- BOUTONS (Animation iOS 26) --- */
+.btn-primary {
+    background: linear-gradient(45deg, var(--primary-pink), var(--secondary-blue));
+    color: var(--text-light);
+    padding: 14px 30px;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    cursor: pointer;
+    border-radius: 12px; /* Coins arrondis iOS */
+    letter-spacing: 1px;
+    display: inline-block;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 15px rgba(255, 0, 119, 0.4); /* Glow subtil */
+}
+
+/* Hover (iOS Glow) */
+.btn-primary:hover {
+    box-shadow: 0 6px 25px var(--primary-pink);
+    transform: translateY(-2px);
+}
+
+/* Click (iOS Press/Scale) */
+.btn-primary:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+/* --- SECTIONS GÉNÉRALES (Apple Scroll) --- */
+.section {
+    min-height: 100vh; /* Plein écran ou presque */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px 8%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Titres de Section */
+.section-title {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, var(--primary-pink), var(--secondary-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    font-weight: 900;
+}
+
+/* --- SCROLL ANIMATION CLASSES (JS triggered) --- */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity var(--transition-speed) ease-out, transform var(--transition-speed) ease-out;
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scale-in {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 1s ease-out 0.2s, transform 1s ease-out 0.2s;
+}
+
+.scale-in.visible {
+    opacity: 1;
+    transform: scale(1);
+}

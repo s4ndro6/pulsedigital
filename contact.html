@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactez Pulse Digital</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles spécifiques à la page Contact */
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        .contact-content h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-content p {
+            font-size: 1.1rem;
+            color: var(--text-fade);
+            margin-bottom: 40px;
+        }
+
+        .contact-form {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: left;
+            box-shadow: 0 0 30px rgba(255, 0, 119, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--secondary-blue);
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-pink);
+            box-shadow: 0 0 5px rgba(255, 0, 119, 0.5);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">PULSE DIGITAL</a>
+        <nav>
+            <ul>
+                <li><a href="agence.html">Agence</a></li>
+                <li><a href="projets.html">Projets</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="contact-content">
+                <h1 class="section-title scroll-reveal">Prenons le Pulse.</h1>
+                <p class="scroll-reveal" data-delay="0.3">Vous avez un projet, une question ou vous voulez simplement échanger autour de votre stratégie digitale ? Remplissez le formulaire ci-dessous ou envoyez-nous un email directement.</p>
+
+                <div class="contact-form scroll-reveal" data-delay="0.5">
+                    <form action="#" method="POST">
+                        
+                        <div class="form-group">
+                            <label for="name">Votre Nom et Prénom *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Votre Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Sujet de la demande (ex: Pack Visibilité, Devis Site Web) *</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Votre Message *</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary btn-submit">Envoyer le Pulse</button>
+                    </form>
+                </div>
+
+                <div class="scroll-reveal" data-delay="0.7" style="margin-top: 40px;">
+                    <h2 style="font-size: 1.5rem; margin-bottom: 10px;">Contact Direct</h2>
+                    <p>Email: <a href="mailto:pulsedigital@outlook.fr" style="color: var(--primary-pink);">pulsedigital@outlook.fr</a></p>
+                    <p>Instagram (Sandro): <a href="https://instagram.com/sndro.sch" style="color: var(--primary-pink);">@sndro.sch</a></p>
+                    <p>Instagram (Janelle): <a href="https://instagram.com/janellesaveant" style="color: var(--primary-pink);">@janellesaveant</a></p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

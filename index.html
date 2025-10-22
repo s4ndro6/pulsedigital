@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PULSE DIGITAL — Studio Créatif & Stratégique</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles spécifiques à l'accueil */
+        .hero {
+            min-height: 100vh;
+            padding-top: 150px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 5.5rem;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            color: var(--text-fade);
+        }
+        
+        .hero-image {
+            width: 80%;
+            max-width: 1000px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 50px rgba(255, 0, 119, 0.5); 
+            filter: brightness(0.95);
+            transition: transform 0.5s;
+        }
+        /* ... (RESTE DU STYLE) ... */
+    </style>
+</head>
+<body>
+    <main>
+        <section class="section hero">
+            <h1 class="section-title scroll-reveal">Faites battre le cœur de votre marque.</h1>
+            <p class="scroll-reveal" data-delay="0.3">Studio créatif étudiant propulsant les PME et créateurs locaux avec une stratégie digitale pointue et un contenu visuel mémorable.</p>
+            <a href="agence.html" class="btn-primary scroll-reveal" data-delay="0.6">Découvrez le Pulse</a>
+            
+            <img src="duo.jpg" alt="Sandro et Janelle fondateurs" class="hero-image scale-in" data-delay="0.8">
+        </section>
+        
+        <section class="section" style="min-height: 80vh; background-color: rgba(255, 0, 119, 0.05);">
+            <h2 class="section-title scroll-reveal" style="color: var(--text-light); -webkit-text-fill-color: var(--text-light);">L'Émotion en Mouvement</h2>
+            <div class="video-container scale-in" data-delay="0.4" style="max-width: 900px; margin: 0 auto; border-radius: 10px; overflow: hidden; box-shadow: 0 0 50px rgba(0, 212, 255, 0.4);">
+                <video controls muted autoplay loop width="100%" poster="duo.jpg">
+                    <source src="video.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la balise vidéo.
+                </video>
+            </div>
+        </section>
+        </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
