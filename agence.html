@@ -3,79 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agence — Le Duo Pulse Digital</title>
+    <title>Contactez Pulse Digital</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Styles spécifiques à la page Agence */
-        .duo-split {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            max-width: 1300px;
-            margin: 50px auto;
+        /* Styles spécifiques à la page Contact */
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 50px;
         }
 
-        .member-card {
+        .contact-form {
+            background-color: rgba(255, 255, 255, 0.05);
             padding: 40px;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            background-color: rgba(255, 255, 255, 0.03);
-            transition: box-shadow 0.3s;
-        }
-        
-        .member-card:hover {
-            box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
-        }
-        
-        .member-card img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
             border-radius: 10px;
-            margin-bottom: 25px;
-            filter: saturate(1.2); /* Pour une image plus vibrante */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: left;
+            box-shadow: 0 0 30px rgba(255, 0, 119, 0.1);
+            margin-bottom: 50px;
         }
         
-        .member-card h3 {
-            color: var(--primary-pink);
-            font-size: 1.8rem;
+        /* CONTENEUR FLEX POUR LES CHAMPS EN LIGNE */
+        .form-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 25px; /* Espace équivalent à form-group */
+        }
+        
+        .form-row .form-group {
+            flex: 1; /* Chaque groupe prend 50% de la ligne */
+            margin-bottom: 0; /* Supprimer la marge en bas du form-group interne */
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            color: var(--secondary-blue);
+        }
+        /* Fin du style pour les lignes */
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-pink);
+            box-shadow: 0 0 5px rgba(255, 0, 119, 0.5);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+        
+        /* STYLES POUR LES ENCADRÉS DE CONTACT DIRECT (inchangés) */
+        .contact-cards {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .contact-card {
+            flex: 1;
+            padding: 20px 10px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            background-color: rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease-out;
+            cursor: pointer;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 0, 119, 0.4);
+        }
+
+        .contact-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            display: block;
+            background: linear-gradient(45deg, var(--primary-pink), var(--secondary-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .contact-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-light);
             margin-bottom: 5px;
         }
-
-        .member-card h4 {
-            color: var(--secondary-blue);
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-
-        .service-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 50px;
-        }
-
-        .service-table th, .service-table td {
-            padding: 20px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: left;
-        }
         
-        .service-table th {
-            color: var(--primary-pink);
-            font-weight: 800;
-            text-transform: uppercase;
-            font-size: 1rem;
-            width: 25%;
-        }
-
-        .service-table td:nth-child(2) {
-            color: var(--secondary-blue);
-            font-weight: 600;
-            width: 30%;
-        }
-        
-        .service-table tr:hover {
-            background-color: rgba(0, 212, 255, 0.05);
+        .card-instagram .icon {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
     </style>
 </head>
@@ -88,84 +132,74 @@
                 <li><a href="agence.html">Agence</a></li>
                 <li><a href="projets.html">Projets</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li style="margin-left: 20px;">
+                    <a href="projets.html#offres" class="btn-header-packs" 
+                       style="padding: 10px 18px; border-radius: 10px; font-weight: 800;">
+                        NOS PACKS
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section class="section">
-            <h1 class="section-title scroll-reveal">Qui sommes-nous ? Le Duo Pulse.</h1>
-            <p class="scroll-reveal" data-delay="0.3" style="text-align: center; max-width: 900px; margin: 0 auto 50px; font-size: 1.2rem;">Pulse Digital, c’est un studio créatif étudiant né de la synergie entre **Stratégie** et **Audiovisuel**. Deux expertises pour propulser votre marque dans l'ère digitale.</p>
+            <div class="contact-content">
+                <h1 class="section-title scroll-reveal">Prenons le Pulse.</h1>
+                <p class="scroll-reveal" data-delay="0.3">Vous avez un projet, une question ou vous voulez simplement échanger autour de votre stratégie digitale ? Remplissez le formulaire ci-dessous.</p>
 
-            <div class="duo-split">
-                <div class="member-card scroll-reveal" data-delay="0.4">
-                    <img src="images/sandro.jpg" alt="Portrait de Sandro" style="filter: hue-rotate(330deg) saturate(1.2);">
-                    <h3>Sandro</h3>
-                    <h4>Stratégie & Marketing Digital</h4>
-                    <p>Le cerveau stratégique. Passionné par le branding et les outils d'IA, Sandro s'occupe de l'architecture de votre présence en ligne. Il définit qui vous êtes et où vous allez.</p>
-                    <ul style="margin-top: 15px; list-style: inside; color: var(--text-fade);">
-                        <li>Stratégie de marque et de positionnement</li>
-                        <li>Création d’identités visuelles complètes</li>
-                        <li>Gestion de campagnes réseaux sociaux</li>
-                        <li>**Toolkit :** Suite Adobe, Figma Pro, ChatGPT, Gemini, Perplexity.</li>
-                    </ul>
+                <div class="contact-form scroll-reveal" data-delay="0.5">
+                    
+                    <form action="https://formspree.io/f/mpwygjyq" method="POST">
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Votre Nom et Prénom / Nom de la marque *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Votre Email *</label>
+                                <input type="email" id="email" name="_replyto" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Sujet de la demande (ex: Pack Visibilité, Devis Site Web) *</label>
+                            <input type="text" id="subject" name="_subject" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Votre Message *</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary btn-submit">Envoyer le Pulse</button>
+                    </form>
                 </div>
-                
-                <div class="member-card scroll-reveal" data-delay="0.6">
-                    <img src="images/janelle.jpg" alt="Portrait de Janelle" style="filter: hue-rotate(30deg) saturate(1.2);">
-                    <h3>Janelle</h3>
-                    <h4>Audiovisuel & Production de contenu</h4>
-                    <p>L'œil créatif. Étudiante en audiovisuel, Janelle apporte la valeur émotionnelle du duo. Elle conçoit, capture et monte le contenu visuel qui fait que votre marque se démarque.</p>
-                    <ul style="margin-top: 15px; list-style: inside; color: var(--text-fade);">
-                        <li>Shooting produits & lifestyle (Studio/Extérieur)</li>
-                        <li>Captation vidéo (Reels, TikTok, Publicité)</li>
-                        <li>Retouche et étalonnage professionnel (Propre, Moderne)</li>
-                        <li>**Toolkit :** Lightroom Classic, DaVinci Resolve, Premiere Pro, CapCut Pro.</li>
-                    </ul>
+
+                <div class="contact-cards">
+                    
+                    <a href="mailto:pulsedigital@outlook.fr" class="contact-card scroll-reveal" data-delay="0.7">
+                        <span class="icon"><i class="fas fa-envelope"></i></span>
+                        <h3>EMAIL PROFESSIONNEL</h3>
+                        <p>pulsedigital@outlook.fr</p>
+                    </a>
+                    
+                    <a href="https://instagram.com/sndro.sch" target="_blank" class="contact-card card-instagram scroll-reveal" data-delay="0.9">
+                        <span class="icon"><i class="fab fa-instagram"></i></span>
+                        <h3>INSTAGRAM (SANDRO)</h3>
+                        <p>@sndro.sch</p>
+                    </a>
+                    
+                    <a href="https://instagram.com/janellesaveant" target="_blank" class="contact-card card-instagram scroll-reveal" data-delay="1.1">
+                        <span class="icon"><i class="fab fa-instagram"></i></span>
+                        <h3>INSTAGRAM (JANELLE)</h3>
+                        <p>@janellesaveant</p>
+                    </a>
+
                 </div>
             </div>
-        </section>
-
-        <section class="section" style="padding-top: 0;">
-            <h2 class="section-title scroll-reveal">Nos Services Détaillés (Le Toolkit Complet)</h2>
-            <p class="scroll-reveal" data-delay="0.2" style="text-align: center; max-width: 800px; margin: 0 auto 40px; color: var(--text-fade);">Une approche modulaire et complète pour s'assurer que chaque aspect de votre communication digitale est couvert.</p>
-
-            <table class="service-table scroll-reveal" data-delay="0.4">
-                <thead>
-                    <tr>
-                        <th>Service</th>
-                        <th>Objectif Clé</th>
-                        <th>Description Détaillée</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Stratégie digitale & audit</td>
-                        <td>Clarifier la direction</td>
-                        <td>Étude de marché, benchmark concurrentiel, définition du positionnement et création d'un plan de communication annuel.</td>
-                    </tr>
-                    <tr>
-                        <td>Création de contenu photo/vidéo</td>
-                        <td>Image de marque impactante</td>
-                        <td>Séance de shooting professionnelle, production de courts/mini-films, création de visuels de campagne et retouches HD.</td>
-                    </tr>
-                    <tr>
-                        <td>Identité visuelle & branding</td>
-                        <td>Cohérence moderne</td>
-                        <td>Conception de Logo, définition de la palette couleur, typographie, création de templates pour Instagram, charte graphique.</td>
-                    </tr>
-                    <tr>
-                        <td>Community management / Éditorial</td>
-                        <td>Gagner en régularité</td>
-                        <td>Planification des publications, idées de storytelling, gestion de calendrier éditorial, engagement et veille de l'e-réputation.</td>
-                    </tr>
-                    <tr>
-                        <td>Sites vitrines (avec IA)</td>
-                        <td>Professionnaliser la présence</td>
-                        <td>Création de mini-sites one-page, sites e-commerce de base, et optimisation SEO/UX pour les commerces locaux/créateurs.</td>
-                    </tr>
-                </tbody>
-            </table>
         </section>
     </main>
 
