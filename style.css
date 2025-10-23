@@ -303,7 +303,7 @@ table {
     }
     
     .section-title, .hero h1 {
-        font-size: 1.8rem !important; /* Réduction drastique pour le mode portrait */
+        font-size: 2rem !important; /* Maximum 2rem comme demandé */
         line-height: 1.2 !important;
         word-wrap: break-word;
         overflow-wrap: break-word;
@@ -354,10 +354,13 @@ table {
         font-size: 0.9rem !important;
     }
     
-    /* Images principales plus petites */
+    /* Images principales optimisées pour mobile */
     .hero-image-aligned {
+        width: 100% !important;
+        max-width: 100% !important;
         max-height: 200px !important;
         object-fit: cover !important;
+        height: auto !important;
     }
     
     /* Toutes les images se réduisent */
@@ -365,6 +368,15 @@ table {
         max-width: 100% !important;
         height: auto !important;
         max-height: 250px !important;
+    }
+    
+    /* Images dans les cartes membres */
+    .member-card img {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important; /* Évite la coupure */
+        max-height: 300px !important;
     }
 
     /* 4. FORMULAIRE DE CONTACT */
@@ -438,6 +450,7 @@ table {
         padding: 25px;
         width: 100% !important;
         max-width: 100% !important;
+        box-sizing: border-box !important;
     }
     
     .offer-card h3 {
@@ -468,17 +481,23 @@ table {
         gap: 30px;
         width: 100% !important;
         max-width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
     }
 
     .member-card {
         width: 100% !important;
         max-width: 100% !important;
         padding: 30px 20px;
+        box-sizing: border-box !important;
     }
 
     .member-card img {
         width: 100% !important;
         max-width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+        max-height: 300px !important;
     }
 
     /* 8. CONTENEURS GÉNÉRAUX */
@@ -517,7 +536,7 @@ table {
     
     /* Typographie encore plus réduite */
     .section-title, .hero h1 {
-        font-size: 1.5rem !important;
+        font-size: 1.8rem !important; /* Reste sous 2rem comme demandé */
         line-height: 1.1 !important;
         margin-bottom: 10px !important;
     }
@@ -584,5 +603,27 @@ table {
         padding: 8px 6px !important;
         font-size: 0.75rem !important;
         min-width: 100px !important;
+    }
+    
+    /* Images encore plus compactes sur très petits écrans */
+    .hero-image-aligned {
+        max-height: 150px !important;
+    }
+    
+    .member-card img {
+        max-height: 250px !important;
+    }
+    
+    img {
+        max-height: 200px !important;
+    }
+    
+    /* Cartes encore plus compactes */
+    .offer-card {
+        padding: 15px !important;
+    }
+    
+    .member-card {
+        padding: 20px 15px !important;
     }
 }
