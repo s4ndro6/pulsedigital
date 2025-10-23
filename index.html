@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WNN8B66H');</script>
+    <!-- End Google Tag Manager -->
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PULSE DIGITAL — Studio Créatif & Stratégique</title>
@@ -26,39 +34,171 @@
             color: var(--text-fade);
         }
         
-        .hero-image {
-            width: 80%;
-            max-width: 1000px;
+        /* Conteneur pour centrer l'image et le bouton */
+        .hero-center-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* BOUTON TRÈS LARGE (80% de la page) */
+        .btn-primary-huge {
+            width: 80%; 
+            max-width: 1000px; 
+            padding: 20px 30px; /* Plus grand padding */
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            /* Les styles de base du .btn-primary sont dans style.css */
+        }
+        
+        /* IMAGE PRESQUE PLEINE LARGEUR (ALIGNÉE SUR LE BOUTON) */
+        .hero-image-aligned {
+            width: 80%; /* Même largeur que le bouton */
+            max-width: 1000px; /* Limite maximale */
             height: auto;
             object-fit: cover;
             border-radius: 15px;
-            box-shadow: 0 10px 50px rgba(255, 0, 119, 0.5); 
+            margin-top: 40px;
+            box-shadow: 0 10px 50px rgba(255, 0, 119, 0.5); /* Néon Rose */
             filter: brightness(0.95);
             transition: transform 0.5s;
         }
-        /* ... (RESTE DU STYLE) ... */
+
+        /* STYLE TABLEAU MANIFESTE (Conservé) */
+        .manifeste-table {
+            width: 100%;
+            max-width: 1100px;
+            margin: 50px auto 30px;
+            border-collapse: separate; 
+            border-spacing: 0 15px; 
+        }
+        
+        .manifeste-table tr {
+            background-color: rgba(0, 212, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease-out;
+        }
+        
+        .manifeste-table tr:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(255, 0, 119, 0.2);
+            background-color: rgba(0, 212, 255, 0.08);
+        }
+
+        .manifeste-table td {
+            padding: 25px;
+            vertical-align: top;
+        }
+
+        .manifeste-table td:nth-child(1) {
+            width: 25%;
+            font-weight: 900;
+            font-size: 1.2rem;
+            color: var(--primary-pink);
+            text-transform: uppercase;
+        }
+
+        .manifeste-table td:nth-child(2) {
+            width: 55%;
+            color: var(--text-fade);
+        }
+        
+        .manifeste-table td:nth-child(3) {
+            width: 20%;
+            font-style: italic;
+            color: var(--secondary-blue);
+            font-weight: 600;
+            text-align: right;
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        /* Réduire la taille de la vidéo pour qu'elle s'adapte à la section */
+        .video-container {
+            max-width: 1000px; 
+        }
+        
     </style>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WNN8B66H"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+        <a href="index.html" class="logo">PULSE DIGITAL</a>
+        <nav>
+            <ul>
+                <li><a href="agence.html">Agence</a></li>
+                <li><a href="projets.html">Projets</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li style="margin-left: 20px;">
+                    <a href="projets.html#offres" class="btn-header-packs" 
+                       style="padding: 10px 18px; border-radius: 10px; font-weight: 800;">
+                        NOS PACKS
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
     <main>
         <section class="section hero">
             <h1 class="section-title scroll-reveal">Faites battre le cœur de votre marque.</h1>
             <p class="scroll-reveal" data-delay="0.3">Studio créatif étudiant propulsant les PME et créateurs locaux avec une stratégie digitale pointue et un contenu visuel mémorable.</p>
-            <a href="agence.html" class="btn-primary scroll-reveal" data-delay="0.6">Découvrez le Pulse</a>
             
-            <img src="duo.jpg" alt="Sandro et Janelle fondateurs" class="hero-image scale-in" data-delay="0.8">
+            <div class="hero-center-box">
+                <a href="agence.html" class="btn-primary btn-primary-huge scroll-reveal" data-delay="0.6" style="text-align: center;">DÉCOUVREZ LE PULSE</a>
+                
+                <img src="duo.jpg.jpg" alt="Sandro et Janelle fondateurs" class="hero-image-aligned scale-in" data-delay="0.8">
+            </div>
+            
         </section>
-        
+
+        <section class="section">
+            <h2 class="section-title scroll-reveal">Notre Conviction : Stratégie + Esthétique</h2>
+            <p class="scroll-reveal" data-delay="0.2" style="text-align: center; max-width: 900px; margin: 0 auto 50px; font-size: 1.2rem; color: var(--text-fade);">Nous intervenons à tous les niveaux pour assurer une communication percutante et rentable, de l'audit initial à la publication finale.</p>
+            
+            <table class="manifeste-table">
+                <tr class="scroll-reveal" data-delay="0.4">
+                    <td>STRATÉGIE AGILE</td>
+                    <td>Définition du positionnement, étude de la concurrence locale et conception d'un plan de communication annuel ciblé. Nous traçons la feuille de route vers le succès.</td>
+                    <td>Gagner en clarté</td>
+                </tr>
+
+                <tr class="scroll-reveal" data-delay="0.6">
+                    <td>CONTENU MÉMORABLE</td>
+                    <td>Production photo/vidéo en haute définition (HD). Création de Reels et de formats courts optimisés pour les algorithmes actuels (Insta, TikTok). Style propre, moderne, et émotionnel.</td>
+                    <td>Maximiser l'engagement</td>
+                </tr>
+
+                <tr class="scroll-reveal" data-delay="0.8">
+                    <td>IDENTITÉ VISUELLE</td>
+                    <td>Conception ou refonte de logo, palette de couleurs, typographie. Création de templates d'histoires et de publications pour une marque 100% cohérente et professionnelle.</td>
+                    <td>Créer la confiance</td>
+                </tr>
+
+                <tr class="scroll-reveal" data-delay="1.0">
+                    <td>ACCESSIBILITÉ</td>
+                    <td>Des solutions modernes et performantes pour tous les budgets. Notre statut de studio étudiant nous permet de rendre la bonne image accessible aux petites structures.</td>
+                    <td>Rendre la com' rentable</td>
+                </tr>
+            </table>
+
+            <a href="projets.html" class="btn-primary btn-primary-huge scroll-reveal" data-delay="1.2" style="margin-top: 30px; align-self: center;">VOIR NOS PACKS</a>
+        </section>
+
         <section class="section" style="min-height: 80vh; background-color: rgba(255, 0, 119, 0.05);">
             <h2 class="section-title scroll-reveal" style="color: var(--text-light); -webkit-text-fill-color: var(--text-light);">L'Émotion en Mouvement</h2>
             <div class="video-container scale-in" data-delay="0.4" style="max-width: 900px; margin: 0 auto; border-radius: 10px; overflow: hidden; box-shadow: 0 0 50px rgba(0, 212, 255, 0.4);">
-                <video controls muted autoplay loop width="100%" poster="duo.jpg">
-                    <source src="video.mp4" type="video/mp4">
+                <video controls muted autoplay loop playsinline width="100%" poster="duo.jpg">
+                    <source src="video.mp4.mp4" type="video/mp4">
                     Votre navigateur ne supporte pas la balise vidéo.
                 </video>
             </div>
         </section>
-        </main>
+    </main>
 
     <script src="script.js"></script>
 </body>
