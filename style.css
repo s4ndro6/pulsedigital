@@ -89,6 +89,7 @@ nav ul li a {
     background: linear-gradient(90deg, var(--primary-pink), var(--secondary-blue));
     color: var(--text-light);
     
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     border: 1px solid transparent;
@@ -168,6 +169,7 @@ nav ul li a:hover {
     font-size: 3.5rem;
     margin-bottom: 20px;
     background: linear-gradient(90deg, var(--primary-pink), var(--secondary-blue));
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: center;
@@ -301,10 +303,22 @@ table {
     }
     
     .section-title, .hero h1 {
-        font-size: 2.2rem; /* Réduction pour le mode portrait */
-        line-height: 1.2;
+        font-size: 1.8rem !important; /* Réduction drastique pour le mode portrait */
+        line-height: 1.2 !important;
         word-wrap: break-word;
         overflow-wrap: break-word;
+        margin-bottom: 15px !important;
+    }
+    
+    /* Réduction des autres titres */
+    h2 {
+        font-size: 1.4rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    h3 {
+        font-size: 1.2rem !important;
+        line-height: 1.2 !important;
     }
     
     .hero p {
@@ -336,8 +350,21 @@ table {
     }
     
     .btn-primary-huge {
-        padding: 15px 20px;
-        font-size: 1rem;
+        padding: 12px 18px !important;
+        font-size: 0.9rem !important;
+    }
+    
+    /* Images principales plus petites */
+    .hero-image-aligned {
+        max-height: 200px !important;
+        object-fit: cover !important;
+    }
+    
+    /* Toutes les images se réduisent */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+        max-height: 250px !important;
     }
 
     /* 4. FORMULAIRE DE CONTACT */
@@ -482,5 +509,80 @@ table {
     img, video, iframe {
         max-width: 100% !important;
         height: auto !important;
+    }
+}
+
+/* Media query pour les très petits écrans (400px et moins) */
+@media (max-width: 400px) {
+    
+    /* Typographie encore plus réduite */
+    .section-title, .hero h1 {
+        font-size: 1.5rem !important;
+        line-height: 1.1 !important;
+        margin-bottom: 10px !important;
+    }
+    
+    h2 {
+        font-size: 1.2rem !important;
+        line-height: 1.1 !important;
+    }
+    
+    h3 {
+        font-size: 1rem !important;
+        line-height: 1.1 !important;
+    }
+    
+    .hero p {
+        font-size: 0.85rem !important;
+        margin-bottom: 15px !important;
+    }
+    
+    /* Padding encore plus réduit */
+    .section {
+        padding: 40px 2% !important;
+    }
+    
+    header {
+        padding: 10px 2% !important;
+    }
+    
+    /* Cartes et éléments plus compacts */
+    .offer-card {
+        padding: 15px !important;
+    }
+    
+    .offer-card h3 {
+        font-size: 1.3rem !important;
+    }
+    
+    .offer-card .price {
+        font-size: 1.8rem !important;
+    }
+    
+    .member-card {
+        padding: 20px 15px !important;
+    }
+    
+    /* Boutons plus petits */
+    .btn-primary {
+        padding: 10px 20px !important;
+        font-size: 0.9rem !important;
+    }
+    
+    .btn-primary-huge {
+        padding: 12px 18px !important;
+        font-size: 0.9rem !important;
+    }
+    
+    /* Tableaux plus compacts */
+    .manifeste-table td {
+        padding: 8px 10px !important;
+        font-size: 0.8rem !important;
+    }
+    
+    .service-table th, .service-table td {
+        padding: 8px 6px !important;
+        font-size: 0.75rem !important;
+        min-width: 100px !important;
     }
 }
