@@ -34,6 +34,34 @@
             color: var(--text-fade);
         }
         
+        /* Media queries pour mobile */
+        @media (max-width: 650px) {
+            .hero h1 {
+                font-size: 2.2rem !important;
+                line-height: 1.2 !important;
+                margin-bottom: 15px !important;
+            }
+            
+            .hero p {
+                font-size: 1rem !important;
+                margin: 0 auto 30px !important;
+                padding: 0 10px;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .hero h1 {
+                font-size: 1.8rem !important;
+                line-height: 1.1 !important;
+                margin-bottom: 10px !important;
+            }
+            
+            .hero p {
+                font-size: 0.9rem !important;
+                margin: 0 auto 20px !important;
+            }
+        }
+        
         /* Conteneur pour centrer l'image et le bouton */
         .hero-center-box {
             display: flex;
@@ -63,6 +91,39 @@
             box-shadow: 0 10px 50px rgba(255, 0, 119, 0.5); /* Néon Rose */
             filter: brightness(0.95);
             transition: transform 0.5s;
+        }
+        
+        /* Media queries pour boutons et images */
+        @media (max-width: 650px) {
+            .btn-primary-huge {
+                width: 95% !important;
+                max-width: 100% !important;
+                padding: 15px 20px !important;
+                font-size: 1rem !important;
+                letter-spacing: 1px !important;
+            }
+            
+            .hero-image-aligned {
+                width: 95% !important;
+                max-width: 100% !important;
+                margin-top: 25px !important;
+                max-height: 200px !important;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .btn-primary-huge {
+                width: 100% !important;
+                padding: 12px 15px !important;
+                font-size: 0.9rem !important;
+                letter-spacing: 0.5px !important;
+            }
+            
+            .hero-image-aligned {
+                width: 100% !important;
+                margin-top: 20px !important;
+                max-height: 150px !important;
+            }
         }
 
         /* STYLE TABLEAU MANIFESTE (Conservé) */
@@ -113,9 +174,88 @@
             border-left: 1px solid rgba(255, 255, 255, 0.05);
         }
         
+        /* Media queries pour le tableau manifeste */
+        @media (max-width: 650px) {
+            .manifeste-table {
+                margin: 30px auto 20px !important;
+                border-spacing: 0 10px !important;
+            }
+            
+            .manifeste-table td {
+                padding: 15px !important;
+            }
+            
+            .manifeste-table td:nth-child(1) {
+                font-size: 1rem !important;
+            }
+            
+            .manifeste-table td:nth-child(2) {
+                font-size: 0.9rem !important;
+            }
+            
+            .manifeste-table td:nth-child(3) {
+                font-size: 0.85rem !important;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .manifeste-table {
+                margin: 20px auto 15px !important;
+                border-spacing: 0 8px !important;
+            }
+            
+            .manifeste-table td {
+                padding: 12px !important;
+            }
+            
+            .manifeste-table td:nth-child(1) {
+                font-size: 0.9rem !important;
+            }
+            
+            .manifeste-table td:nth-child(2) {
+                font-size: 0.8rem !important;
+            }
+            
+            .manifeste-table td:nth-child(3) {
+                font-size: 0.75rem !important;
+            }
+        }
+        
         /* Réduire la taille de la vidéo pour qu'elle s'adapte à la section */
         .video-container {
             max-width: 1000px; 
+        }
+        
+        /* Media queries pour la vidéo et autres éléments */
+        @media (max-width: 650px) {
+            .video-container {
+                max-width: 100% !important;
+                margin: 0 10px !important;
+            }
+            
+            .hero {
+                padding-top: 120px !important;
+                min-height: auto !important;
+            }
+            
+            /* Réduire les marges des sections */
+            .section {
+                padding: 40px 3% !important;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .video-container {
+                margin: 0 5px !important;
+            }
+            
+            .hero {
+                padding-top: 100px !important;
+            }
+            
+            .section {
+                padding: 30px 2% !important;
+            }
         }
         
     </style>
