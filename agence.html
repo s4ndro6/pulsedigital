@@ -42,8 +42,7 @@
             object-fit: cover;
             border-radius: 10px;
             margin-bottom: 25px;
-            /* Filtres pour la DA Neon */
-            filter: saturate(1.2); 
+            /* Image naturelle sans filtres dénaturants */
         }
         
         .member-card h3 {
@@ -88,6 +87,110 @@
         
         .service-table tr:hover {
             background-color: rgba(0, 212, 255, 0.05);
+        }
+        
+        /* Media queries pour mobile */
+        @media (max-width: 650px) {
+            .duo-split {
+                grid-template-columns: 1fr !important;
+                gap: 30px !important;
+                margin: 30px auto !important;
+            }
+            
+            .member-card {
+                padding: 25px !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            
+            .member-card img {
+                width: 100% !important;
+                max-width: 100% !important;
+                height: auto !important;
+                object-fit: contain !important; /* Évite la coupure */
+                max-height: 300px !important; /* Limite la hauteur */
+                margin-bottom: 20px !important;
+            }
+            
+            .member-card h3 {
+                font-size: 1.4rem !important;
+            }
+            
+            .member-card h4 {
+                font-size: 1rem !important;
+            }
+            
+            .member-card p {
+                font-size: 0.9rem !important;
+            }
+            
+            .member-card ul {
+                font-size: 0.85rem !important;
+            }
+            
+            /* Réduire les marges des sections */
+            .section {
+                padding: 40px 3% !important;
+            }
+            
+            /* Titres plus petits */
+            h1.section-title {
+                font-size: 1.8rem !important;
+                line-height: 1.2 !important;
+            }
+            
+            h2.section-title {
+                font-size: 1.5rem !important;
+                line-height: 1.2 !important;
+            }
+            
+            /* Paragraphes plus petits */
+            p {
+                font-size: 0.9rem !important;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .member-card {
+                padding: 20px !important;
+            }
+            
+            .member-card img {
+                max-height: 250px !important;
+                margin-bottom: 15px !important;
+            }
+            
+            .member-card h3 {
+                font-size: 1.2rem !important;
+            }
+            
+            .member-card h4 {
+                font-size: 0.9rem !important;
+            }
+            
+            .member-card p {
+                font-size: 0.85rem !important;
+            }
+            
+            .member-card ul {
+                font-size: 0.8rem !important;
+            }
+            
+            .section {
+                padding: 30px 2% !important;
+            }
+            
+            h1.section-title {
+                font-size: 1.5rem !important;
+            }
+            
+            h2.section-title {
+                font-size: 1.3rem !important;
+            }
+            
+            p {
+                font-size: 0.85rem !important;
+            }
         }
     </style>
 </head>
@@ -134,7 +237,7 @@
             </div>
             <div class="duo-split">
                 <div class="member-card scroll-reveal" data-delay="0.8">
-                    <img src="sandro.jpg.jpg" alt="Portrait de Sandro" style="filter: hue-rotate(330deg) saturate(1.2);">
+                    <img src="sandro.jpg.jpg" alt="Portrait de Sandro">
                     <h3>Sandro</h3>
                     <h4>Stratégie & Marketing Digital</h4>
                     <p>Le cerveau stratégique. Passionné par le branding et les outils d'IA, Sandro s'occupe de l'architecture de votre présence en ligne. Il définit qui vous êtes et où vous allez.</p>
@@ -147,7 +250,7 @@
                 </div>
                 
                 <div class="member-card scroll-reveal" data-delay="1.0">
-                    <img src="janelle.jpg.jpg" alt="Portrait de Janelle" style="filter: hue-rotate(30deg) saturate(1.2);">
+                    <img src="janelle.jpg.jpg" alt="Portrait de Janelle">
                     <h3>Janelle</h3>
                     <h4>Audiovisuel & Production de contenu</h4>
                     <p>L'œil créatif. Étudiante en audiovisuel, Janelle apporte la valeur émotionnelle du duo. Elle conçoit, capture et monte le contenu visuel qui fait que votre marque se démarque.</p>
