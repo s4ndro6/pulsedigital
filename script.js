@@ -47,4 +47,43 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 4. Galerie Photographique - Projet École
+    const photos = [
+        { 
+            src: 'assets/images/lightbox_face.jpg', 
+            alt: 'Portrait éclairé par une lumière chaude, projet d\'école en photographie',
+            title: 'Portrait Frontal',
+            description: 'Portrait éclairé par une lumière chaude — Projet d\'école en photographie'
+        },
+        { 
+            src: 'assets/images/lightbox_side.jpg', 
+            alt: 'Vue latérale éclairée dans l\'ombre, projet d\'école en photographie',
+            title: 'Vue Latérale',
+            description: 'Vue latérale éclairée dans l\'ombre — Projet d\'école en photographie'
+        }
+    ];
+
+    // Fonction pour générer dynamiquement la galerie (optionnel - déjà en HTML)
+    // Cette structure de données peut être utilisée pour étendre la galerie facilement
+    const photoGallery = document.querySelector('.photo-gallery');
+    if (photoGallery && photoGallery.children.length === 0) {
+        // Génération dynamique seulement si la galerie est vide
+        photos.forEach((photo, index) => {
+            const photoItem = document.createElement('div');
+            photoItem.className = 'photo-item scroll-reveal fade-in-photo';
+            photoItem.setAttribute('data-delay', (0.4 + index * 0.3).toString());
+            
+            photoItem.innerHTML = `
+                <img src="${photo.src}" alt="${photo.alt}" class="photo-img">
+                <div class="photo-caption">
+                    <h4>${photo.title}</h4>
+                    <p>${photo.description}</p>
+                </div>
+            `;
+            
+            photoGallery.appendChild(photoItem);
+            observer.observe(photoItem); // Observer pour l'animation au scroll
+        });
+    }
+
 });

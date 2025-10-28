@@ -109,6 +109,129 @@
             padding: 0;
             color: var(--bg-dark);
         }
+
+        /* GALERIE PHOTOGRAPHIQUE - PROJET ÉCOLE */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .photo-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(255, 0, 119, 0.1), rgba(0, 212, 255, 0.1));
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .photo-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(255, 0, 119, 0.4), 0 0 40px rgba(0, 212, 255, 0.3);
+            border-color: rgba(255, 0, 119, 0.5);
+        }
+
+        .photo-img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.9) contrast(1.1);
+            transition: filter 0.5s ease, transform 0.5s ease;
+        }
+
+        .photo-item:hover .photo-img {
+            filter: brightness(1) contrast(1.2);
+            transform: scale(1.05);
+        }
+
+        .photo-caption {
+            padding: 25px;
+            background: linear-gradient(to top, rgba(5, 5, 5, 0.95), rgba(5, 5, 5, 0.85));
+            backdrop-filter: blur(10px);
+        }
+
+        .photo-caption h4 {
+            color: var(--primary-pink);
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .photo-caption p {
+            color: var(--text-fade);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            font-style: italic;
+        }
+
+        /* Animation de fondu personnalisée pour les photos */
+        .fade-in-photo {
+            opacity: 0;
+            transform: translateY(30px) scale(0.95);
+            transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), 
+                        transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .fade-in-photo.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* Responsive pour la galerie photo */
+        @media (max-width: 850px) {
+            .photo-gallery {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .photo-img {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .photo-gallery {
+                gap: 30px;
+                padding: 10px;
+            }
+
+            .photo-img {
+                height: 350px;
+            }
+
+            .photo-caption h4 {
+                font-size: 1.2rem;
+            }
+
+            .photo-caption p {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .photo-img {
+                height: 300px;
+            }
+
+            .photo-caption {
+                padding: 20px;
+            }
+
+            .photo-caption h4 {
+                font-size: 1rem;
+            }
+
+            .photo-caption p {
+                font-size: 0.8rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -169,6 +292,29 @@
                     <div class="project-info">
                         <h3>PULSE.DEV - Intégration & JS</h3>
                         <p>Développement de la partie front-end avec animations JavaScript (Intersection Observer) et optimisation de la performance pour un rendu fluide et dynamique.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projet-photo" class="section" style="min-height: 100vh; background-color: rgba(5, 5, 5, 0.95);">
+            <h2 class="section-title scroll-reveal" style="color: var(--text-light); -webkit-text-fill-color: var(--text-light);">Projet Photographique — École</h2>
+            <p class="scroll-reveal" data-delay="0.2" style="text-align: center; max-width: 900px; margin: 0 auto 50px; font-size: 1.2rem; color: var(--text-fade);">Exploration du contraste et de la lumière : portraits réalisés dans le cadre d'un projet scolaire en photographie.</p>
+            
+            <div class="photo-gallery">
+                <div class="photo-item scroll-reveal fade-in-photo" data-delay="0.4">
+                    <img src="assets/images/lightbox_face.jpg" alt="Portrait éclairé par une lumière chaude" class="photo-img">
+                    <div class="photo-caption">
+                        <h4>Portrait Frontal</h4>
+                        <p>Portrait éclairé par une lumière chaude — Projet d'école en photographie</p>
+                    </div>
+                </div>
+                
+                <div class="photo-item scroll-reveal fade-in-photo" data-delay="0.7">
+                    <img src="assets/images/lightbox_side.jpg" alt="Vue latérale éclairée dans l'ombre" class="photo-img">
+                    <div class="photo-caption">
+                        <h4>Vue Latérale</h4>
+                        <p>Vue latérale éclairée dans l'ombre — Projet d'école en photographie</p>
                     </div>
                 </div>
             </div>
